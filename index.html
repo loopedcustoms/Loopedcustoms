@@ -1,63 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Looped Customs</title>
-<style>
-  /* Global */
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:Arial,sans-serif;background:#fff;color:#000;line-height:1.5;}
-  img{max-width:100%;height:auto;display:block;}
-  a{text-decoration:none;color:#000;}
-  h2{margin-bottom:10px;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Looped Customs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212; /* Dark background */
+      color: #f5f5f5; /* Light text */
+      text-align: center;
+    }
 
-  /* Header */
-  header{background:#000;color:#fff;text-align:center;padding:20px;}
-  header img{max-width:120px;margin-bottom:10px;}
+    header {
+      padding: 20px;
+      background: #1b1b1b;
+      color: white;
+    }
 
-  /* Nav */
-  nav{display:flex;justify-content:center;flex-wrap:wrap;background:#111;}
-  nav button{background:none;border:none;color:#fff;padding:12px 18px;margin:4px;cursor:pointer;border-radius:6px;font-size:16px;}
-  nav button.active, nav button:hover{background:#333;}
+    header img {
+      display: block;
+      margin: 0 auto 10px auto;
+      max-width: 200px;
+      cursor: pointer;
+    }
 
-  /* Main content */
-  main{max-width:1200px;margin:0 auto;padding:20px;width:90%;}
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
 
-  /* Tabs */
-  .tab{display:none;}
-  .tab.active{display:block;}
+    nav {
+      margin-top: 10px;
+      background: #222;
+      padding: 10px 0;
+    }
 
-  /* Pricing Cards */
-  .cards{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;margin-top:15px;}
-  .card{flex:1 1 180px;border:1px solid #000;padding:15px;border-radius:10px;text-align:center;min-width:160px;}
+    nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
 
-  /* Gallery */
-  .gallery{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
-  .gallery img{width:calc(33% - 10px);border:2px solid #000;border-radius:6px;cursor:pointer;}
-  @media(max-width:900px){.gallery img{width:calc(50% - 10px);}}
-  @media(max-width:600px){.gallery img{width:100%;}}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-  /* Footer */
-  footer{text-align:center;padding:20px;color:#666;font-size:14px;}
-</style>
+    section.tab {
+      display: none; /* Hide all tabs by default */
+      padding: 40px 20px;
+      min-height: 80vh;
+    }
+
+    section.tab.active {
+      display: block; /* Show only active tab */
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #1b1b1b;
+      padding: 20px;
+      flex: 1 1 180px;
+      min-width: 160px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      text-align: center;
+      color: #f5f5f5;
+    }
+
+    iframe {
+      border: 0;
+    }
+
+    footer {
+      background: #1b1b1b;
+      color: #ccc;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <img src="https://i.ibb.co/Sbb5271/logo.png" alt="Looped Customs Logo">
-  <h1>Looped Customs</h1>
-</header>
+  <header>
+    <img src="https://i.ibb.co/Z55G31w/Screenshot-20250914-173820-Gallery-removebg-preview.png" alt="Looped Customs Logo" onclick="openTab('home')">
+    <h1>Looped Customs</h1>
+    <nav>
+      <a onclick="openTab('home')">Home</a>
+      <a onclick="openTab('gallery')">Gallery</a>
+      <a onclick="openTab('prints')">Custom Prints</a>
+      <a onclick="openTab('order')">Order</a>
+    </nav>
+  </header>
 
-<nav>
-  <button class="tabbtn active" data-tab="home">Home</button>
-  <button class="tabbtn" data-tab="shop">Shop</button>
-  <button class="tabbtn" data-tab="gallery">Gallery</button>
-  <button class="tabbtn" data-tab="order">Order</button>
-  <button class="tabbtn" data-tab="contact">Contact</button>
-</nav>
-
-<main>
   <!-- Home -->
   <section id="home" class="tab active">
     <h2>Custom 3D Printed Keychains</h2>
@@ -67,64 +117,55 @@
       <div class="card"><h3>$12</h3><p>Letter Keychain (Hand-Painted)</p></div>
       <div class="card"><h3>$15</h3><p>Custom Keychain (Black or White)</p></div>
       <div class="card"><h3>$20</h3><p>Custom Keychain (Hand-Painted)</p></div>
+      <div class="card"><h3>Starting at $25</h3><p>Custom 3D Print (Pricing varies by size & detail)</p></div>
     </div>
-  </section>
-
-  <!-- Shop -->
-  <section id="shop" class="tab">
-    <h2>Shop</h2>
-    <p>Select your style and then fill out the Order Form. All orders are collected through our Google Form and saved in our system. Payment is accepted via Cash App: <strong>$LoopedCustoms</strong>.</p>
   </section>
 
   <!-- Gallery -->
   <section id="gallery" class="tab">
     <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/400x400.png?text=Sample+1" alt="Sample 1">
-      <img src="https://via.placeholder.com/400x400.png?text=Sample+2" alt="Sample 2">
-      <img src="https://via.placeholder.com/400x400.png?text=Sample+3" alt="Sample 3">
+    <p>Examples of our custom keychains and prints will be displayed here soon!</p>
+  </section>
+
+  <!-- Custom 3D Prints -->
+  <section id="prints" class="tab">
+    <h2>Custom 3D Prints</h2>
+    <p>We use <strong>PETG</strong> filament for durable, high-quality prints. Pricing starts at <strong>$10</strong> plus the cost of filament (charged per gram).</p>
+
+    <div class="cards">
+      <div class="card"><h3>+$0.20/gram <br> Black or white <br> <br> +$0.40/gram <br> hand painted</h3><p>Material cost depends on your design weight</p></div>
     </div>
+
+    <p><strong>Example:</strong> A 100g PETG print would be $10 + cost of 100g filament.</p>
+
+    <p><strong>Important:</strong> <strong>Keychains are <em>not allowed</em> as custom 3D prints.</strong> Please order keychains using the Home tab pricing. Custom 3D Prints are intended for larger or unique designs only.</p>
+
+    <p><strong>Build Size Limit:</strong> Models must fit within the <strong>Ender 3 V2 SE</strong> print area of <strong>220 × 220 × 250 mm</strong>. If a design is larger, it can be split into multiple parts for an additional <strong>$5 per extra part</strong>.</p>
+
+    <p><strong>How to order:</strong> Submit your design idea through the <a href="#order">Order Form</a> and we’ll send you a personalized quote.</p>
   </section>
 
   <!-- Order -->
   <section id="order" class="tab">
-    <h2>Order Form</h2>
-    <!-- Responsive Google Form Embed -->
-    <div style="position:relative;padding-bottom:200%;height:0;overflow:hidden;max-width:1000px;margin:0 auto;">
+    <h2>Place Your Order</h2>
+    <p>Fill out the form below with your order details. We’ll contact you for confirmation.</p>
+    <div style="position:relative;padding-bottom:150%;height:0;overflow:hidden;max-width:1000px;margin:0 auto;">
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe-WPLOBj_bJwW-0MCUU6PzcRTZ7QF07bPl2AaQxLo0zsXvSA/viewform?embedded=true" 
-              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" 
-              frameborder="0" 
-              marginheight="0" 
-              marginwidth="0">Loading…</iframe>
+              style="position:absolute;top:0;left:0;width:100%;height:100%;">
+      </iframe>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="tab">
-    <h2>Contact & Payment</h2>
-    <p><strong>Cash App:</strong> $LoopedCustoms</p>
-    <p>Email: <a href="mailto:loopedcustoms@gmail.com">loopedcustoms@gmail.com</a></p>
-  </section>
-</main>
+  <footer>
+    <p>&copy; 2025 Looped Customs. All rights reserved. Pay via Cash App: <strong>$LoopedCustoms</strong></p>
+  </footer>
 
-<footer>
-  Looped Customs © <span id="year"></span>
-</footer>
-
-<script>
-  // Tabs
-  document.querySelectorAll('.tabbtn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const tab=btn.dataset.tab;
-      document.querySelectorAll('.tab').forEach(s=>s.classList.remove('active'));
-      document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));
-      document.getElementById(tab).classList.add('active');
-      btn.classList.add('active');
-    });
-  });
-
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <script>
+    function openTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
